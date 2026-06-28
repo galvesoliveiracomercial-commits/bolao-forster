@@ -184,7 +184,7 @@ footer{border-top:1px solid var(--w3);padding:40px 32px;text-align:center}
       <span class="tse">:</span>
       <div class="tbl"><span class="tno" id="ts">00</span><div class="tun">seg</div></div>
     </div>
-    <div class="tma">Próximo: <strong>Brasil x Japão — 28/06 · 14h00</strong></div>
+    <div class="tma">Próximo: <strong>Brasil x Japão — 29/06 · 14h00</strong></div>
   </div>
 </div>
 
@@ -218,7 +218,7 @@ footer{border-top:1px solid var(--w3);padding:40px 32px;text-align:center}
     <p style="text-align:center;font-size:16px;color:var(--w7);margin-bottom:40px">Escolha o placar e clique em fazer meu palpite. Os palpites fecham no apito inicial.</p>
     <div class="gcard">
       <div class="gme">Copa do Mundo FIFA 2026™ · Fase de Grupos · Grupo E</div>
-      <div class="gdt">Domingo, 28/06/2026 · 14h00</div>
+      <div class="gdt">Domingo, 29/06/2026 · 14h00</div>
       <div class="gts">
         <div class="tem"><div class="tfl">🇧🇷</div><div class="tna">Brasil</div></div>
         <div class="vss">
@@ -294,7 +294,7 @@ footer{border-top:1px solid var(--w3);padding:40px 32px;text-align:center}
 
 <script>
 function updateTimer(){
-  var t=new Date('2026-06-28T14:00:00-03:00'),d=t-new Date();
+  var t=new Date('2026-06-29T14:00:00-03:00'),d=t-new Date();
   if(d<=0){['td','th','tm','ts'].forEach(function(i){document.getElementById(i).textContent='00'});return}
   var D=Math.floor(d/86400000),H=Math.floor((d%86400000)/3600000),M=Math.floor((d%3600000)/60000),S=Math.floor((d%60000)/1000);
   document.getElementById('td').textContent=String(D).padStart(2,'0');
@@ -327,7 +327,7 @@ function enviar(){
   if(!a){alert('Aceite o regulamento para continuar.');return}
   var p='Brasil '+ge+' x '+gb+' Japão';
   var fid='1FAIpQLSefzoT8IiZVxwyqTa-gDx3_DxJ9XbE6WMxXZrwWAtfPwlrfvA';
-  var jogo='Brasil x Jap%C3%A3o - 28%2F06';var body='entry.1860907376='+encodeURIComponent(n)+'&entry.923130510='+encodeURIComponent(t)+'&entry.1433703192='+encodeURIComponent(e)+'&entry.980520409='+encodeURIComponent(p)+'&entry.898816549='+jogo;
+  var jogo='Brasil x Jap%C3%A3o - 29%2F06';var body='entry.1860907376='+encodeURIComponent(n)+'&entry.923130510='+encodeURIComponent(t)+'&entry.1433703192='+encodeURIComponent(e)+'&entry.980520409='+encodeURIComponent(p)+'&entry.898816549='+jogo;
   fetch('https://docs.google.com/forms/d/e/'+fid+'/formResponse',{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:body});
   document.getElementById('pop-form').classList.remove('active');
   document.getElementById('pop-thanks').classList.add('active');

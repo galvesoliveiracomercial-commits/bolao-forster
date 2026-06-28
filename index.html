@@ -184,7 +184,7 @@ footer{border-top:1px solid var(--w3);padding:40px 32px;text-align:center}
       <span class="tse">:</span>
       <div class="tbl"><span class="tno" id="ts">00</span><div class="tun">seg</div></div>
     </div>
-    <div class="tma">Próximo: <strong>Escócia x Brasil — 24/06 · 19h00</strong></div>
+    <div class="tma">Próximo: <strong>Brasil x Japão — 28/06 · 14h00</strong></div>
   </div>
 </div>
 
@@ -217,18 +217,18 @@ footer{border-top:1px solid var(--w3);padding:40px 32px;text-align:center}
     <h2 style="text-align:center">Crave o placar</h2>
     <p style="text-align:center;font-size:16px;color:var(--w7);margin-bottom:40px">Escolha o placar e clique em fazer meu palpite. Os palpites fecham no apito inicial.</p>
     <div class="gcard">
-      <div class="gme">Copa do Mundo FIFA 2026™ · Fase de Grupos · Grupo C</div>
-      <div class="gdt">Terça-feira, 24/06/2026 · 19h00</div>
+      <div class="gme">Copa do Mundo FIFA 2026™ · Fase de Grupos · Grupo E</div>
+      <div class="gdt">Domingo, 28/06/2026 · 14h00</div>
       <div class="gts">
-        <div class="tem"><div class="tfl">🏴󠁧󠁢󠁳󠁣󠁴󠁿</div><div class="tna">Escócia</div></div>
+        <div class="tem"><div class="tfl">🇧🇷</div><div class="tna">Brasil</div></div>
         <div class="vss">
           <div class="sci">
-            <input type="number" class="sin" id="se" min="0" max="20" placeholder="0" aria-label="Gols Escócia">
+            <input type="number" class="sin" id="se" min="0" max="20" placeholder="0" aria-label="Gols Japão">
             <span class="sxx">×</span>
             <input type="number" class="sin" id="sb" min="0" max="20" placeholder="0" aria-label="Gols Brasil">
           </div>
         </div>
-        <div class="tem"><div class="tfl">🇧🇷</div><div class="tna">Brasil</div></div>
+        <div class="tem"><div class="tfl">🇯🇵</div><div class="tna">Japão</div></div>
       </div>
       <div class="gti">&#x26A0;&#xFE0F; Palpite vale apenas para o tempo normal (90 min)</div>
     </div>
@@ -294,7 +294,7 @@ footer{border-top:1px solid var(--w3);padding:40px 32px;text-align:center}
 
 <script>
 function updateTimer(){
-  var t=new Date('2026-06-24T19:00:00-03:00'),d=t-new Date();
+  var t=new Date('2026-06-28T14:00:00-03:00'),d=t-new Date();
   if(d<=0){['td','th','tm','ts'].forEach(function(i){document.getElementById(i).textContent='00'});return}
   var D=Math.floor(d/86400000),H=Math.floor((d%86400000)/3600000),M=Math.floor((d%3600000)/60000),S=Math.floor((d%60000)/1000);
   document.getElementById('td').textContent=String(D).padStart(2,'0');
@@ -306,7 +306,7 @@ updateTimer();setInterval(updateTimer,1000);
 function abrirPopup(){
   var ge=document.getElementById('se').value,gb=document.getElementById('sb').value;
   if(ge===''||gb===''){alert('Preencha o placar dos dois times!');return}
-  var p='Escócia '+ge+' x '+gb+' Brasil';
+  var p='Brasil '+ge+' x '+gb+' Japão';
   document.getElementById('placar-txt').textContent=p;
   document.getElementById('thanks-pb').textContent='⚽ '+p;
   document.getElementById('pop-form').classList.add('active');
@@ -325,9 +325,9 @@ function enviar(){
       gb=document.getElementById('sb').value;
   if(!n||!t||!e){alert('Preencha todos os campos!');return}
   if(!a){alert('Aceite o regulamento para continuar.');return}
-  var p='Escócia '+ge+' x '+gb+' Brasil';
+  var p='Brasil '+ge+' x '+gb+' Japão';
   var fid='1FAIpQLSefzoT8IiZVxwyqTa-gDx3_DxJ9XbE6WMxXZrwWAtfPwlrfvA';
-  var body='entry.1860907376='+encodeURIComponent(n)+'&entry.923130510='+encodeURIComponent(t)+'&entry.1433703192='+encodeURIComponent(e)+'&entry.980520409='+encodeURIComponent(p);
+  var jogo='Brasil x Jap%C3%A3o - 28%2F06';var body='entry.1860907376='+encodeURIComponent(n)+'&entry.923130510='+encodeURIComponent(t)+'&entry.1433703192='+encodeURIComponent(e)+'&entry.980520409='+encodeURIComponent(p)+'&entry.898816549='+jogo;
   fetch('https://docs.google.com/forms/d/e/'+fid+'/formResponse',{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:body});
   document.getElementById('pop-form').classList.remove('active');
   document.getElementById('pop-thanks').classList.add('active');

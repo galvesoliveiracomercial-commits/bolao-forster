@@ -137,6 +137,9 @@ footer{border-top:1px solid var(--w3);padding:40px 32px;text-align:center}
 .ftx{font-size:13px;color:var(--w7)}
 .ftx a{color:var(--go);text-decoration:none}
 @media(max-width:900px){.hi{grid-template-columns:1fr;gap:40px}.fld{display:none}.steps{grid-template-columns:1fr}.rg{grid-template-columns:1fr}nav{padding:12px 20px}.ovc{padding:28px 18px}.toc{padding:36px 20px}.gcard{padding:24px 16px}.gts{gap:10px}.sin{width:52px;height:52px;font-size:28px}}
+
+      .aviso-seguir{background:linear-gradient(135deg,#f5a623,#f7c94b);color:#1a0a2e;border-radius:12px;padding:14px 20px;margin-bottom:20px;font-size:14px;line-height:1.5;border-left:4px solid #e8940a;box-shadow:0 4px 15px rgba(245,166,35,.3);}
+      .aviso-seguir strong{font-weight:800;}
 </style>
 </head>
 <body>
@@ -154,6 +157,9 @@ footer{border-top:1px solid var(--w3);padding:40px 32px;text-align:center}
       <div class="ey"><span></span> Bolão Roxinho 🟣</div>
       <h1>Crave o placar,<br>ganhe seu <em>kit</em></h1>
       <p class="hd">A cada jogo do Brasil, sorteamos um <strong>Kit Roxinho Completo</strong> entre todo mundo que acertar o placar exato. É de graça. Basta palpitar.</p>
+      <div class="aviso-seguir">
+        ⚠️ <strong>ATENÇÃO:</strong> Para concorrer ao prêmio, é obrigatório estar <strong>seguindo o perfil do Instagram @forsternutrition</strong>. Palpites de quem não segue serão desclassificados.
+      </div>
       <div class="acts">
         <a href="#palpite" class="bp">&#x26BD; Fazer meu palpite</a>
         <a href="#como-funciona" class="bg2">Como funciona</a>
@@ -184,7 +190,7 @@ footer{border-top:1px solid var(--w3);padding:40px 32px;text-align:center}
       <span class="tse">:</span>
       <div class="tbl"><span class="tno" id="ts">00</span><div class="tun">seg</div></div>
     </div>
-    <div class="tma">Próximo: <strong>Brasil x Japão — 29/06 · 14h00</strong></div>
+    <div class="tma">Próximo: <strong>Brasil x Noruega — 05/07 · 17h00</strong></div>
   </div>
 </div>
 
@@ -218,7 +224,7 @@ footer{border-top:1px solid var(--w3);padding:40px 32px;text-align:center}
     <p style="text-align:center;font-size:16px;color:var(--w7);margin-bottom:40px">Escolha o placar e clique em fazer meu palpite. Os palpites fecham no apito inicial.</p>
     <div class="gcard">
       <div class="gme">Copa do Mundo FIFA 2026™ · Fase de Grupos · Grupo E</div>
-      <div class="gdt">Domingo, 29/06/2026 · 14h00</div>
+      <div class="gdt">Domingo, 05/07/2026 · 17h00</div>
       <div class="gts">
         <div class="tem"><div class="tfl">🇧🇷</div><div class="tna">Brasil</div></div>
         <div class="vss">
@@ -228,7 +234,7 @@ footer{border-top:1px solid var(--w3);padding:40px 32px;text-align:center}
             <input type="number" class="sin" id="sb" min="0" max="20" placeholder="0" aria-label="Gols Brasil">
           </div>
         </div>
-        <div class="tem"><div class="tfl">🇯🇵</div><div class="tna">Japão</div></div>
+        <div class="tem"><div class="tfl">🇳🇴</div><div class="tna">Noruega</div></div>
       </div>
       <div class="gti">&#x26A0;&#xFE0F; Palpite vale apenas para o tempo normal (90 min)</div>
     </div>
@@ -294,7 +300,7 @@ footer{border-top:1px solid var(--w3);padding:40px 32px;text-align:center}
 
 <script>
 function updateTimer(){
-  var t=new Date('2026-06-29T14:00:00-03:00'),d=t-new Date();
+  var t=new Date('2026-07-05T17:00:00-03:00'),d=t-new Date();
   if(d<=0){['td','th','tm','ts'].forEach(function(i){document.getElementById(i).textContent='00'});return}
   var D=Math.floor(d/86400000),H=Math.floor((d%86400000)/3600000),M=Math.floor((d%3600000)/60000),S=Math.floor((d%60000)/1000);
   document.getElementById('td').textContent=String(D).padStart(2,'0');
@@ -306,7 +312,7 @@ updateTimer();setInterval(updateTimer,1000);
 function abrirPopup(){
   var ge=document.getElementById('se').value,gb=document.getElementById('sb').value;
   if(ge===''||gb===''){alert('Preencha o placar dos dois times!');return}
-  var p='Brasil '+ge+' x '+gb+' Japão';
+  var p='Brasil '+ge+' x '+gb+' Noruega';
   document.getElementById('placar-txt').textContent=p;
   document.getElementById('thanks-pb').textContent='⚽ '+p;
   document.getElementById('pop-form').classList.add('active');
@@ -325,9 +331,9 @@ function enviar(){
       gb=document.getElementById('sb').value;
   if(!n||!t||!e){alert('Preencha todos os campos!');return}
   if(!a){alert('Aceite o regulamento para continuar.');return}
-  var p='Brasil '+ge+' x '+gb+' Japão';
+  var p='Brasil '+ge+' x '+gb+' Noruega';
   var fid='1FAIpQLSefzoT8IiZVxwyqTa-gDx3_DxJ9XbE6WMxXZrwWAtfPwlrfvA';
-  var jogo='Brasil x Jap%C3%A3o - 29%2F06';var body='entry.1860907376='+encodeURIComponent(n)+'&entry.923130510='+encodeURIComponent(t)+'&entry.1433703192='+encodeURIComponent(e)+'&entry.980520409='+encodeURIComponent(p)+'&entry.898816549='+jogo;
+  var jogo='Brasil x Noruega - 05%2F07';var body='entry.1860907376='+encodeURIComponent(n)+'&entry.923130510='+encodeURIComponent(t)+'&entry.1433703192='+encodeURIComponent(e)+'&entry.980520409='+encodeURIComponent(p)+'&entry.898816549='+jogo;
   fetch('https://docs.google.com/forms/d/e/'+fid+'/formResponse',{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:body});
   document.getElementById('pop-form').classList.remove('active');
   document.getElementById('pop-thanks').classList.add('active');
